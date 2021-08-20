@@ -46,7 +46,7 @@ public class CustomerRegister extends HttpServlet {
 	    String pwd = request.getParameter("password");
 	    String name = request.getParameter("name");
 	    String address = request.getParameter("address");
-		try {//190030061
+		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 		Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe",
 				"jfsd","jfsd123");
@@ -55,7 +55,6 @@ public class CustomerRegister extends HttpServlet {
 		 
 		 String sql = "insert into customers values(?,?,?,?)";
 		 PreparedStatement pst = con.prepareStatement(sql);
-		   //190030061
 		    pst.setString(1, name);
 		    pst.setString(2, email);
 		    pst.setString(3, pwd);
