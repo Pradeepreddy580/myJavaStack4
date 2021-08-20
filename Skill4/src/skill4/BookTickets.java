@@ -48,13 +48,13 @@ public class BookTickets extends HttpServlet {
 	    String numberOfTickets = request.getParameter("not");
 	    String bookedDate = request.getParameter("dob");
 	    String movieName = request.getParameter("movieName");
-		try {//190030061
+		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 		Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe",
 				"jfsd","jfsd123");
 		System.out.println("Connected to database");
 		 Statement st = con.createStatement();
-		 //190030061
+		 
 		 String sql = "insert into tickets values(myseq1.NEXTVAL,?,?,?,?,?,?)";
 		 PreparedStatement pst = con.prepareStatement(sql);
 		   int totalAmount = Integer.parseInt(numberOfTickets)*100;
