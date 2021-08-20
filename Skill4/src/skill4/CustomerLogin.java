@@ -45,13 +45,13 @@ public class CustomerLogin extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String userid = request.getParameter("username");    
 	    String pwd = request.getParameter("password");
-		try {//190030061
+		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 		Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe",
 				"jfsd","jfsd123");
 		System.out.println("Connected to database");
 		 Statement st = con.createStatement();
-		 //190030061
+		
 		 String sql = "select * from customers where email = ? and password = ?";
 		 PreparedStatement pst = con.prepareStatement(sql);
 		   
