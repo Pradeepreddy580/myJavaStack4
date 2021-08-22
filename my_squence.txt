@@ -1,0 +1,13 @@
+CREATE SEQUENCE myseq2
+start with 1
+increment by 1
+minvalue 0
+maxvalue 100
+cycle;
+
+CREATE SEQUENCE myseq1
+start with 1
+increment by 1
+minvalue 0
+maxvalue 100
+cycle;
